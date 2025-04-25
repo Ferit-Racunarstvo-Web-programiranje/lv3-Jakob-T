@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meteorološka galerija</title>
+  <link rel="stylesheet" href="/styles/slike.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.css">
+</head>
+
+<body>
+  <nav aria-label="Glavna navigacija">
+    <ul class="nav-menu">
+      <li class="dropdown">
+        <a href="#">Izbornik</a>
+        <ul class="dropdown-menu">
+          <li><a href="/index.html">Početna</a></li>
+          <li><a href="/slike">Galerija (EJS)</a></li>
+          <li><a href="/grafikon.html">Grafikon</a></li>
+          <li class="dropdown-sub">
+            <a href="#">Više</a>
+            <ul class="dropdown-submenu">
+              <li><a href="https://www.linkedin.com/in/jakob-trelec-ba0a7a26b/">Kontakt</a></li>
+              <li><a href="https://github.com/Jakob-T">O autoru</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <h1>Galerija slika (dinamički prikaz)</h1>
+
+  <section class="galerija">
+    <% images.forEach(image => { %>
+
+      <figure>
+        <a href="#<%= image.id %>">
+          <img src="<%= image.url %>" alt="<%= image.title %>">
+        </a>
+        <figcaption><%= image.title %></figcaption>
+      </figure>
+      <a href="#" id="<%= image.id %>" class="lightbox">
+        <img src="<%= image.url %>" class="lightbox_image" alt="<%= image.title %>">
+        <span class="close">×</span>
+      </a>
+    <% }) %>
+  </section>
+</body>
+
+</html>
