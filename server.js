@@ -1,12 +1,12 @@
 const express = require('express');
-const path = require('path');
 const app = express();
-const port = 3000;
+const path = require('path');
 
-// Poslužuj statičke datoteke (HTML, CSS, JS, CSV)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
-app.listen(port, () => {
-  console.log(`Server je pokrenut na http://localhost:${port}`);
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server radi na http://localhost:${PORT}`));
