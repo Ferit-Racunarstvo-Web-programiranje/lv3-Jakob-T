@@ -2,9 +2,9 @@
 <html lang="hr">
 <head>
   <meta charset="UTF-8">
-  <title>Vremenski Podaci - Filtriranje</title>
+  <title>Vremenski Podaci</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
 
@@ -42,11 +42,17 @@
         <th>Sezona</th>
         <th>Temperatura</th>
         <th>Vrsta vremena</th>
-        <th>Datum</th>
+        <th>Plan</th>
       </tr>
     </thead>
     <tbody></tbody>
   </table>
+
+  <aside id="plan">
+    <h3>Moj plan</h3>
+    <ul id="lista-plana"></ul>
+    <button id="potvrdi-plan">Potvrdi plan</button>
+  </aside>
 
   <script src="script.js"></script>
 </body>
